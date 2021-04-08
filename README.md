@@ -30,10 +30,6 @@ erss-hwk2-zz204-yh254 (project root)
 
 Running Instructions
 
-- git clone git@gitlab.oit.duke.edu:zz204/erss-hwk2-zz204-yh254.git
-- cd erss-hwk2-zz204-yh254/src
-- make
-- cd ..
 - docker compose-up -d
 - Use Firefox (do not forget to set proxy server) to validate, please see in testcases.txt
 - cd ./logs
