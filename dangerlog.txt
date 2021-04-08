@@ -1,0 +1,38 @@
+ECE 568 Homework 2 Proxy Server
+
+Yichen Hua (yh254) & Zifeng Zhang (zz204)
+
+Danger Logs
+
+Exception Guarantees:
+
+Sometimes the client may send invalid request, for which we should return 404 URL not found.
+
+For sockets, when creating, binding, listening and accepting new connections, these actions may fail. We wrap each of them with try...catch... and pass
+any exception to higher-level functions, where these exceptions will be properly processed (either quit with error or retry).
+
+
+Mar.03.2021:
+
+The user may send other protocols like FTP, SFTP and etc. Our proxy server may not be able to process them, 
+thus may cause the result website appears differently.
+
+HTTP may require "long TCP connection" via header "connectivity: keep-alive", we need to take this situation into consideration.
+
+Mar.06.2021:
+
+Time value may not be in the GMT format. 
+
+We create a new thread each time out socket "accepts" a new socket request. It is bad since too many connection request
+may cause the proxy server to run into OutOfMemory or StackOverflow. Instead we created a fixed thread pool to handle this situation.
+The fixed thread pool only create a certain number of threads (e.g. 50) for handling requests, which protects the system.
+However this may increase the response latency from a user's perspective. We may build a cluster with a load balancer in the front to solve this problem
+in the real industry. 
+
+
+
+
+
+
+
+

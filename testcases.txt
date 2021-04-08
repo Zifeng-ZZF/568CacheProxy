@@ -1,0 +1,25 @@
+All my testcases for the web proxy server:
+
+Normal cases:
+
+	Search Engines: https://www.baidu.com   https://www.google.com
+
+	Shopping: https://www.taobao.com     https://www.amazon.com
+
+	Maps: https://www.google.com/maps
+
+	Video stream: https://www.youtube.com
+
+	University Website: https://duke.edu
+
+	POST: http://httpbin.org/forms/post
+
+	HTTP: http://www.man7.org/linux/man-pages/man2/recv.2.html
+
+Invalid URL: 
+
+	404: www.123321123.com
+
+Concurrent Situations: 
+	
+	Open may active tags simultaneously.

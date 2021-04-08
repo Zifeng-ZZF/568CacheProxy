@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  cache-proxy:
+      build: ./src
+      user: root
+      command: /src/proxy
+      volumes:
+        - ./src:/src
+        - ./logs:/var/log/erss
+      ports:
+        - "12345:12345"
