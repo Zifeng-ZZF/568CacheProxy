@@ -1,7 +1,7 @@
 # cache proxy
 We built a proxy server which supports HTTP/HTTPS request from browser. It receives and sends request to the destination server then fetches response and returns to the browser. The communication is based on Socket (TCP).
 
-We also implemented LRU cache to cache recently visited websites. 
+We also implemented LRU cache to cache recently visited websites. Caching & Parsing protocol follows RFC 7234 : https://datatracker.ietf.org/doc/html/rfc7234
 
 #### Instruction on Running
 
